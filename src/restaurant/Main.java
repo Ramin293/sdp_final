@@ -8,5 +8,11 @@ public final class Main {
             MenuItem item = factory.create(dish);
             System.out.printf("%s: %d KZT%n", item.description(), item.price());
         }
+
+        MenuItem burger = factory.create(MenuItemFactory.Dish.BURGER);
+        MenuItem cheeseburger = new Topping(burger, Topping.Extra.CHEESE);
+        MenuItem burgerWithSauce = new Topping(cheeseburger, Topping.Extra.SAUCE);
+        System.out.printf("%s: %d KZT%n", cheeseburger.description(), cheeseburger.price());
+        System.out.printf("%s: %d KZT%n", burgerWithSauce.description(), burgerWithSauce.price());
     }
 }
